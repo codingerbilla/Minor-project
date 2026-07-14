@@ -1,39 +1,36 @@
-password = 1234
-balance = 100000
-pin = int(input("Enter ATM Password: "))
-
-if pin == password:
+balance =5000
+pin = "1234"
+print("Welcome to the ATM /nPlease enter your PIN:")
+user_pin = input()
+if user_pin == pin:
+    print("PIN accepted. What would you like to do?")
 
     while True:
-        print("\n1. Deposit")
-        print("2. Withdraw")
-        print("3. Balance")
+        print("1. Check Balance")
+        print("2. Withdraw Money")
+        print("3. Deposit Money")
         print("4. Exit")
 
-        choice = int(input("Enter your choice: "))
+        choice = input("Enter your choice (1-4): ")
 
-        if choice == 1:
-            amount = int(input("Enter deposit amount: "))
-            balance = balance + amount
-            print("New Balance =", balance)
-
-        elif choice == 2:
-            amount = int(input("Enter withdraw amount: "))
+        if choice == "1":
+            print(f"Your current balance is: {balance}")
+        elif choice == "2":
+            amount = float(input("Enter the amount to withdraw: "))
             if amount <= balance:
-                balance = balance - amount
-                print("New Balance =", balance)
+                balance -= amount
+                print(f"You have withdrawn {amount}. Your new balance is: {balance}")
             else:
-                print("Insufficient Balance")
-
-        elif choice == 3:
-            print("Balance =", balance)
-
-        elif choice == 4:
-            print("Thank You")
-            break
-
-        else:
-            print("Invalid Choice")
+                print("Insufficient funds.")
+        elif choice == "3":
+            amount = float(input("Enter the amount to deposit: "))
+            balance += amount
+            print(f"You have deposited {amount}. Your new balance is: {balance}")
+        elif choice == "4":
+            print("Thank you for using the ATM. Goodbye!")
+        break
+    else:
+            print("Invalid choice. Please try again.")
 
 else:
-    print("Wrong Password")
+    print("Invalid PIN. Please try again.")
