@@ -1,9 +1,9 @@
 balance =5000
-pin = "1234"
-print("Welcome to the ATM /nPlease enter your PIN:")
-user_pin = input()
-if user_pin == pin:
-    print("PIN accepted. What would you like to do?")
+password_change = "1234"
+print("Welcome to the ATM /nPlease enter your password:")
+user_password = input()
+if user_password == password:
+    print("Password accepted. What would you like to do?")
 
     while True:
         print("1. Check Balance")
@@ -33,4 +33,4 @@ if user_pin == pin:
             print("Invalid choice. Please try again.")
 
 else:
-    print("Invalid PIN. Please try again.")
+    print("Invalid Password. Please try again.")
